@@ -1,0 +1,169 @@
+↑isRoot: true
+comment: My First Page as root page
+preloadPriority: high
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        '/*Begin_c8o_PageImport*/
+        /*End_c8o_PageImport*/
+        /*Begin_c8o_PageDeclaration*/
+        	latitude : string;
+        	longitude : string;
+        	altitude : string;
+        	accessTokenMapBox = ''pk.eyJ1IjoidGhldGhpZXVtYSIsImEiOiJja2l5bzJkd3oyOXU4MnpuNHJwcHJobjVqIn0.ckOyKBTQBppcoAMPstwk1w'';
+        	/*End_c8o_PageDeclaration*/
+        /*Begin_c8o_PageConstructor*/
+        		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageFunction*/
+        	getLocationData(position) {
+        		console.log(position)
+        		this.setLat(position.coords.latitude);
+        		this.setLong(position.coords.longitude)
+        //		this.altitude = position.coords.atltitude;
+        	}
+        	
+        	setLat(lat) {
+        		this.latitude = lat;
+        	}
+        	
+        	setLong(long) {
+        		this.longitude = long;
+        	}
+        	/*End_c8o_PageFunction*/
+        '
+segment: path-to-page
+title: First page
+↓Header [mobile.components.UIDynamicElement-1491634212350]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓NavBar [mobile.components.UIDynamicElement-1491634231108]: 
+    beanData: '{"ionBean":"NavBar"}'
+    tagName: ion-navbar
+    ↓BarTitle [mobile.components.UIDynamicElement-1491634265317]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [mobile.components.UIText-1491634275121]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:My First App
+    ↓Button [mobile.components.UIDynamicElement-1491634442029]: 
+      beanData: '{"ionBean":"Button","MenuMode":"plain:menuToggle"}'
+      comment: A button to toggle the menu
+      tagName: button
+      ↓Icon [mobile.components.UIDynamicElement-1491634475867]: 
+        beanData: '{"ionBean":"Icon","IconName":"plain:menu"}'
+        tagName: ion-icon
+    ↓ButtonSet [mobile.components.UIDynamicElement-1491634611427]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1491634621907]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Icon [mobile.components.UIDynamicElement-1491634637555]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:more"}'
+          tagName: ion-icon
+↓Content [mobile.components.UIDynamicElement-1489674805352]: 
+  beanData: '{"ionBean":"Content"}'
+  comment: Page content
+  tagName: ion-content
+  ↓Div [mobile.components.UIDynamicElement-1608560881656]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓id [mobile.components.UIAttribute-1608560892318]: 
+      attrName: id
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:map
+↓Footer [mobile.components.UIDynamicElement-1491634242460]: 
+  beanData: '{"ionBean":"Footer"}'
+  comment: Page footer
+  tagName: ion-footer
+  ↓ToolBar [mobile.components.UIDynamicElement-1491634317538]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet [mobile.components.UIDynamicElement-1491634325595]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:left"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1491634332730]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Text [mobile.components.UIText-1491634340354]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 1
+    ↓ButtonSet1 [mobile.components.UIDynamicElement-1491634373539]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
+      tagName: ion-buttons
+      ↓Button [mobile.components.UIDynamicElement-1491634376874]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: button
+        ↓Text [mobile.components.UIText-1491634383107]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 2
+↓PageEvent [mobile.components.UIPageEvent-1608557643101]: 
+  ↓IfElse [mobile.components.UIDynamicIf-1608557742016]: 
+    beanData: '{"ionBean":"IfElseAction","condition":"script:navigator.geolocation"}'
+    ↓importLeaflet [mobile.components.UICustomAction-1608560604365]: 
+      package_dependencies: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: leaflet
+                - java.lang.String: 
+                  - ↑value: 1.7.1
+      page_ts_imports: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: '* as leaflet'
+                - java.lang.String: 
+                  - ↑value: leaflet
+      ↓CustomAction [mobile.components.UICustomAction-1608557876395]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		// var mymap = leaflet.map(''map'').setView([51.505, -0.09], 13);
+                		navigator.geolocation.getCurrentPosition((position) =>{
+                				console.log(position)
+                				this.setLat(position.coords.latitude);
+                				this.setLong(position.coords.longitude)
+                				//		this.altitude = position.coords.atltitude;
+                				resolve();
+                				
+                		var mymap = leaflet.map(''map'').setView([this.latitude, this.longitude], 15);
+                		leaflet.tileLayer(''https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}'', {
+                	    attribution: ''Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'',
+                	    maxZoom: 18,
+                	    id: ''mapbox/streets-v11'',
+                	    tileSize: 512,
+                	    zoomOffset: -1,
+                	    accessToken: this.accessTokenMapBox
+                		}).addTo(mymap);
+                		
+                		var marker = leaflet.marker([this.latitude, this.longitude]).addTo(mymap)
+                		});
+                		
+                
+                	
+                '
+        ↓Toast [mobile.components.UIDynamicAction-1608557778020]: 
+          beanData: '{"ionBean":"ToastAction","message":"script:''Lat: '' + this.latitude + \r\n''Longitude: '' + this.longitude + \r\n''Altitude: '' + this.altitude"}'
